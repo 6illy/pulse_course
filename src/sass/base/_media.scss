@@ -82,10 +82,27 @@
       &__descr {
          margin-top: 12px;
       }
-
    }
 
+   .consultation {
 
+      .title {
+         text-align: center;
+         font-size: 23px;
+      }
+
+      &__descr {
+         font-size: 17px;
+         text-align: center;
+      }
+
+      .feed-form {
+         transform: translateX(-50%);
+         left: 50%;
+         position: absolute;
+
+      }
+   }
 }
 
 @media (max-width: 767px) {
