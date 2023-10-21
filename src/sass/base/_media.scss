@@ -1,0 +1,184 @@
+@media (max-width: 575px) {
+   .header {
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+
+      &__official {
+         display: none;
+      }
+
+      &__logo {
+         width: 250px;
+
+         img {
+            max-width: 100%;
+         }
+      }
+
+      &__contacts {
+         margin-top: 20px;
+         display: flex;
+         flex-direction: row;
+      }
+
+      &__phone {
+         font-size: 16px;
+         padding-right: 10px;
+      }
+
+
+      .button {
+         width: 135px;
+         height: 24px;
+      }
+   }
+
+   .promo {
+      &__wrapper {
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &__header {
+         font-size: 28px;
+      }
+
+      &__subheader {
+         font-size: 15px;
+      }
+
+      &__icons {
+         justify-content: space-around;
+      }
+   }
+
+   .advantages {
+      .title {
+         font-size: 23px;
+      }
+
+      &__wrapper {
+         flex-direction: column;
+         justify-content: center;
+         align-items: center;
+         margin-top: 50px;
+      }
+
+      &__item {
+         margin-bottom: 30px;
+
+         &:nth-child(3) {
+            margin-bottom: 0;
+         }
+      }
+
+      &__subtitle {
+         margin-top: 5px;
+      }
+
+      &__descr {
+         margin-top: 12px;
+      }
+
+   }
+
+
+}
+
+@media (max-width: 767px) {
+   .header {
+      display: flex;
+      justify-content: space-around;
+
+      &__phone {
+         font-size: 16px;
+      }
+
+      .button {
+         width: 137px;
+      }
+   }
+
+   .promo {
+      &__wrapper {
+         flex-direction: column;
+         align-items: center;
+         justify-content: center;
+      }
+
+      &__header {
+         font-size: 40px;
+      }
+
+      &__subheader {
+         font-size: 20px;
+      }
+   }
+
+   .advantages {
+      .title {
+         font-size: 29px;
+      }
+
+      &__wrapper {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__item {
+         margin-bottom: 30px;
+
+         &:nth-child(3) {
+            margin-bottom: 0;
+         }
+      }
+
+      &__subtitle {
+         margin-top: 5px;
+      }
+
+      &__descr {
+         margin-top: 12px;
+      }
+   }
+
+}
+
+@media (max-width: 991px) {
+   .header {
+      justify-content: space-around;
+   }
+
+   .promo {
+      &__wrapper {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__header {
+         font-size: 40px;
+      }
+
+      &__subheader {
+         font-size: 21px;
+      }
+
+
+
+   }
+
+   .advantages {
+      .title {
+         font-size: 28px;
+      }
+
+      &__wrapper {
+         justify-content: space-around;
+      }
+   }
+}
