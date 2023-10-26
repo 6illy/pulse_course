@@ -184,9 +184,6 @@
       &__subheader {
          font-size: 21px;
       }
-
-
-
    }
 
    .advantages {
@@ -197,5 +194,41 @@
       &__wrapper {
          justify-content: space-around;
       }
+   }
+}
+
+@media (max-width: 1199px) {
+   .header {
+      justify-content: space-around;
+   }
+
+   .promo {
+      &__wrapper {
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+      }
+
+      &__header {
+         font-size: 41px;
+      }
+
+      &__subheader {
+         font-size: 23px;
+      }
+   }
+
+   .advantages {
+      .title {
+         font-size: 29px;
+      }
+
+      &__wrapper {
+         justify-content: space-around;
+      }
+   }
+
+   .catalog {
+      margin-top: 26px;
    }
 }
