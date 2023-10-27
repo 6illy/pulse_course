@@ -8,6 +8,7 @@
    font-size: 12px;
    font-weight: 700;
    text-transform: uppercase;
+   transition: 0.3s all;
 
    &_main {
       width: 300px;
@@ -26,5 +27,9 @@
       width: 131px;
       height: 40px;
       font-size: 14px;
+   }
+
+   &:hover {
+      box-shadow: 0 0 10px #f0f;
    }
 }
