@@ -56,18 +56,92 @@ $(document).ready(function () {
       });
    });
 
-
-
-
+   // для закрытия модальных окон нажатием на фон
    $(window).on('click', function (e) {
       if (e.target.classList.contains('overlay')) {
          $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
       }
    });
+
+   // для закрытия модальных окон клавишой Esc
    $(document).keyup(function (e) {
       if (e.keyCode === 27) {   // esc
          $('.overlay, #consultation, #thanks, #order').fadeOut('slow');
       }
    });
 
+
+
+   function validateForms(form) {
+      $(form).validate({
+         rules: {
+            name: {
+               required: true,
+               minlength: 2
+            },
+            phone: "required",
+            email: {
+               required: true,
+               email: true
+            },
+         },
+         messages: {
+            name: {
+               required: "Пожалуйста, введите ваше полное имя",
+               minlength: jQuery.validator.format('Пожалуйста, введите минимум {0} символа!')
+            },
+            phone: "Пожалуйста, введите свой номер телефона",
+            email: {
+               required: "Пожалуйста, введите свой адресс електронной почты",
+               email: "Неправильно введён адрес почты"
+            }
+         }
+      });
+   }
+
+   validateForms('#consultation form');
+   validateForms('#consultation-form');
+   validateForms('#order form');
+
+   $('input[name=phone]').mask("+380 (99)-999-99-99");
+
+   $('form').submit(function (e) {
+      e.preventDefault();
+
+      if (!$(this).valid()) {
+         return;
+      }
+
+      $.ajax({
+         type: "POST",
+         url: "mailer/smart.php",
+         data: $(this).serialize()
+      }).done(function () {
+         $(this).find("input").val("");
+         $('#consultation, #order').fadeOut();
+         $('.overlay, #thanks').fadeIn('slow');
+
+         $('form').trigger('reset');
+      });
+      return false;
+   });
+
+   // Smooth scroll and pageup
+
+   $(window).scroll(function () {
+      if ($(this).scrollTop() > 1600) {
+         $('.pageup').fadeIn();
+      } else {
+         $('.pageup').fadeOut();
+      }
+   });
+
+   $("a[href=#up]").click(function () {
+      const _href = $(this).attr("href");
+      $("html, body").animate({ scrollTop: $(_href).offset().top + "px" });
+      return false;
+   });
+
+
 });
+

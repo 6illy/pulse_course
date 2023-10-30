@@ -45,6 +45,19 @@
    &_mini {
       min-height: 140px;
    }
+
+   .error {
+      border: 1px solid red;
+   }
+
+   label.error {
+      display: inline-block;
+      border: none;
+      text-align: center;
+      margin-bottom: 15px;
+
+   }
+
 }
 
 
